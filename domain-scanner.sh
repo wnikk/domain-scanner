@@ -58,12 +58,6 @@ processNoautodomainFile() {
                 full_domain="$subdomain.$domain"
             fi
 
-            if [ "$first_entry" = true ]; then
-                first_entry=false
-            else
-                echo "," >> "$TEMP_FILE"
-            fi
-
             # Save the domain and path to JSON
             local real_dir=$(realpath "$current_dir/$folder")
             domains+=("\"$full_domain\": \"$real_dir\"")
