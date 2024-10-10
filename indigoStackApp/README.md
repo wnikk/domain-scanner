@@ -67,7 +67,3 @@ After these steps, your Nginx configuration will be updated based on the domain 
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-This `README.md` provides clear instructions on how to use both scripts, and it should be suitable for a GitHub repository. If you need further adjustments or improvements, feel free to ask!
