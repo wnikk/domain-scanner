@@ -79,5 +79,18 @@ chmod +x domain-scanner.sh
 - Modify the starting directory by changing the line scan_directories "/var/sites" to scan another location.
 - Add a .noautodomain file in any directory to customize domain and folder mappings for that directory.
 
+
+## Like What You See? :thumbsup:
+
+[![Stars](https://img.shields.io/github/stars/wnikk/domain-scanner)](https://github.com/wnikk/domain-scanner)
+
+### Give Stars :star:
+
+Make the maintainer happy by hitting the star icon for this repository!
+
+### Ready to be a sponsor? :coffee:
+
+You can now [buy me a latte](https://www.buymeacoffee.com/wnik) =)
+
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
