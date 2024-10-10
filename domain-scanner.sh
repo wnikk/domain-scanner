@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Base directory for scanning
-BASE_DIR="."
+BASE_DIR="/var/www"
 
 # Resulting JSON file
 OUTPUT_FILE="./domains.json"
