@@ -12,14 +12,26 @@ This is a Bash script that scans a directory structure to identify domain names 
 - Shows progress by printing the domains found during the scan.
 
 ## Example Directory Structure
-    /var/sites/test1.dev/www (main domain)
-    /var/sites/test1.dev/sub (sub domain)
-    /var/sites/test2.com/dev (ignored - no www folder)
-    /var/sites/test3.com/www (main domain)
-    /var/sites/test3.com/second/www (first sub domain)
-    /var/sites/test3.com/second/secondsub (second sub domain)
-    /var/sites/test4.one/dev (ignored - no www folder)
-    /var/sites/test5.www/dev (ignored - no www folder)
+```
+/var/sites
+├── test1.dev
+│   ├── www (main domain)
+│   └── sub (sub domain)
+├── test2.com
+│   └── dev (ignored - no www folder)
+├── test3.com
+│   ├── www (main domain)
+│   └── second
+│       ├── www (first sub domain)
+│       └── secondsub (second sub domain)
+├── test4.www
+│   └── dev (ignored - no www folder)
+└── test5.com
+        ├── .noautodomain (file)
+        ├── public_html (main domain by custom config)
+        └── protected
+            └── share (second domain by custom config)
+```
 
 ## Example Output
 
@@ -30,7 +42,9 @@ For the directory structure above, the resulting JSON file will contain:
   "sub.test1.com": "/var/sites/test1.com/sub",
   "test3.com": "/var/sites/test3.com/www",
   "second.test3.com": "/var/sites/test3.com/second/www",
-  "secondsub.second.test3.com": "/var/sites/test3.com/second/one"
+  "secondsub.second.test3.com": "/var/sites/test3.com/second/secondsub",
+  "test5.com": "/var/sites/test5.com/public_html",
+  "subdomain.test5.com": "/var/sites/test5.com/protected/share"
 }
 ```
 
@@ -45,11 +59,11 @@ For the directory structure above, the resulting JSON file will contain:
 www = public_html
 subdomain = protected/share
 ```
-For the above .noautodomain file located at /var/sites/test1.com/, the JSON output will include:
+For the above .noautodomain file located at /var/sites/test5.com/, the JSON output will include:
 ```json
 {
-  "test1.com": "/var/sites/test1.com/public_html",
-  "subdomain.test1.com": "/var/sites/test1.com/protected/share"
+  "test5.com": "/var/sites/test5.com/public_html",
+  "subdomain.test5.com": "/var/sites/test5.com/protected/share"
 }
 ```
 ## Progress Display
