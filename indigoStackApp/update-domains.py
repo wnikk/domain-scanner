@@ -5,6 +5,7 @@ import copy
 from pprint import pprint
 
 USER_HOME_FOLDER = '/Users/[your_username]/'
+AUTO_DOMAIN_ROOT = '/var/www/'
 INDIGOSTACK_CONFIG_FILE = os.path.join(USER_HOME_FOLDER, 'Documents/Indigo/stack.indigostack/config.json')
 INDIGOSTACK_CONFIG_LIST_FOLDER = os.path.join(USER_HOME_FOLDER, 'Library/Application Support/com.marmaladesoul.Indigo/states')
 
@@ -14,7 +15,7 @@ with open('./domains.json', 'r') as f:
 
 # Resolve absolute paths for each folder in the domains
 for domain, folder in domains.items():
-    domains[domain] = os.path.realpath(os.path.join(os.getenv('AUTO_DOMAIN_ROOT', ''), folder))
+    domains[domain] = os.path.realpath(os.path.join(AUTO_DOMAIN_ROOT, folder))
 
 # Load the config from the Indigo stack config file
 with open(INDIGOSTACK_CONFIG_FILE, 'r') as f:
