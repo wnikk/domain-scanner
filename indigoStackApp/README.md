@@ -42,14 +42,13 @@ This will:
 
 ### Configuration
 
-1. **Paths**: Ensure the `USER_HOME_FOLDER` variable in `update_domains.py` point to the correct paths on your system.
+**Paths**: Ensure the `USER_HOME_FOLDER` variable in `update_domains.py` point to the correct paths on your system.
    
    For example:
    ```python
    USER_HOME_FOLDER = '/Users/admin/'
+   AUTO_DOMAIN_ROOT = '/var/www/'
    ```
-
-2. **AUTO_DOMAIN_ROOT Environment Variable**: If needed, you can set the `AUTO_DOMAIN_ROOT` environment variable to specify the base path for domain folders.
 
 ## Example Workflow
 
