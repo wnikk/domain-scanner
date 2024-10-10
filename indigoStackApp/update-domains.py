@@ -91,6 +91,5 @@ list_configs = glob.glob(os.path.join(INDIGOSTACK_CONFIG_LIST_FOLDER, 'nginxsite
 for file_config in list_configs:
     site_id = os.path.basename(file_config)[10:-5]
     if site_id not in domain_map:
-        print(f"unlink file_config")
         os.unlink(file_config)
 print("Complete")
